@@ -1,50 +1,90 @@
-# Covid-19 Analysis Project
+# COVID-19 Global Impact Analysis — Power BI Dashboard
 
-###  Project Overview  
-This project presents a detailed **data analysis of global Covid-19 records** from **2020 to 2025**, aimed at uncovering trends, fatality rates, and safety measures that were taken within the selected period.  
-The objective was to determine whether safety measures have improved over time, analyze case frequencies, fatality rates, vaccination rates, and note regions most affected by the pandemic.  
+An interactive Power BI dashboard exploring the global footprint of the COVID-19 pandemic across cases, deaths, government policy responses, and vaccination efforts. The analysis draws on the [Our World in Data (OWID)](https://ourworldindata.org/covid-cases) COVID-19 dataset and is structured around three self-defined research themes.
 
 ---
 
-###  Objectives  
-- Examine the **trends of cases and fatalities** across the years.  
-- Note **increases and decreased in cases and fatalities** in relation to other factors 
-- Identify **regions most affected by the pandemic** and what extra measures they must have taken.  
-- Determine whether **preventive measures like vaccination** contributed to reduction of cases over time.  
-- Assess **progress in stricter government policies** and provide data-driven insights.  
+## Repository Contents
+
+| File | Description |
+|---|---|
+| `Covid_Project_Work.pbix` | Interactive Power BI dashboard (5 report pages) |
+| `COVID19_Report.pptx` | PowerPoint summary report of findings |
+| `README.md` | Project documentation |
 
 ---
 
-###  Tools & Techniques  
-- **Microsoft Power BI (Power Query Editor):** Data cleaning and transformation.  
-- **Microsoft Power BI (Data Model):** Creation of relationships between fields for proper Data model.
-- **Microsoft Power BI (DAX):** Creation of measures for charts and further analysis.  
-- **Report Design:** Interactive Power BI multi-page report summarizing major trends and findings.  
+## Research Questions
+
+The analysis was structured around three themes developed independently for this project.
+
+### Theme A — Global Intensity
+- What were the overall cases and fatalities recorded due to Covid?
+- What year had the highest number of cases?
+- In what year did the most deaths occur?
+- How frequent were there new fatalities and cases?
+- What was the average reproduction rate recorded?
+
+### Theme B — Geographic Impact
+- What was the mortality rate in each continent, and which continent was most affected?
+- What countries had the highest mortality rate?
+
+### Theme C — Global Response & Prevention
+- How strict overall were government policies regarding the pandemic? *(Stringency Index)*
+- What could we note about the number of cases in countries with stricter policies and their death rate? Did a high Stringency Index contribute to lowering deaths and new cases, or did it not help?
+- Were there enough vaccinations available for prevention?
 
 ---
 
-###  Repository Contents  
-| File Name | Description |
-|------------|-------------|
-| `Covid Project Work.pbix` | Cleaned dataset, data model, DAX, and full report |
+## Dashboard Pages
+
+**1. Impact Metrics**
+Overview cards for total global cases and deaths, case fatality rate, top-affected countries and continents, and trend lines across years.
+
+**2. New Cases**
+Daily and cumulative new case tracking, top countries by new case volume, continental breakdown, and the ratio of new cases to total cases over time.
+
+**3. New Deaths**
+New death trends over time, top countries by new death count, continental comparisons, and the ratio of new deaths to total deaths.
+
+**4. Vaccinations**
+New vaccinations administered, people vaccinated, country and continent rankings by vaccination volume, and daily vaccination rate.
+
+**5. Gov. Policies**
+Stringency Index and reproduction rate by country and continent, policy trend lines across the pandemic timeline, and high-stringency day analysis.
 
 ---
 
-###  Report Preview  
-![Dashboard Overview]()
+## Dataset
+
+**Source:** Our World in Data — COVID-19 Dataset  
+**URL:** https://github.com/owid/covid-19-data  
+**Coverage:** Global, daily records from January 2020 onwards  
+**Key columns used:** `total_cases`, `total_deaths`, `new_cases`, `new_deaths`, `reproduction_rate`, `stringency_index`, `new_vaccinations`, `new_people_vaccinated_smoothed`
+
+> **Note on data structure:** The OWID dataset includes aggregate rows for world regions, continents, and income groups alongside individual country rows. The data model accounts for this by filtering on non-blank continent values to isolate country-level records in relevant calculations.
 
 ---
 
-###  Summary  
-This project demonstrates proficiency in **data cleaning, transformation, and visualization** using Microsoft Power BI.  
-The analysis reflects real-world problem-solving skills — from handling messy data to communicating findings through an interactive and comprehensive report.  
+## Data Model
+
+The report uses a star schema with three tables:
+
+- **COMPACT FACT TABLE** — daily metrics per location (cases, deaths, vaccinations, policy indices)
+- **LOCATION DIM** — country and continent attributes
+- **DATE DIM** — date hierarchy (Year, Quarter, Month, Day)
 
 ---
 
-### 👤 Author  
+## Tools Used
+
+- **Microsoft Power BI Desktop** — data modelling, DAX measures, and dashboard design
+- **Microsoft PowerPoint** — summary report
+- **Data source:** Our World in Data (CSV)
+
+---
+
+## Author
+
 **Okonkwo Uchechukwu Faith**  
-*Data Analyst*  
- Nigeria  
-
----
-
+Data Analysis Project — 2025
